@@ -1,3 +1,9 @@
+import { SUPPORTED_DOCUMENT_TYPES } from "@chatwithdocs/core";
+
+const supportedTypes = SUPPORTED_DOCUMENT_TYPES.map((type) => type.label).join(
+  ", ",
+);
+
 const sections = [
   { title: "Upload", description: "Add documents to a knowledge base." },
   { title: "Search", description: "Find the passages that match a question." },
@@ -12,6 +18,7 @@ export default function Home() {
         <p className="text-lg text-zinc-600 dark:text-zinc-400">
           Upload documents, search them, and chat with them.
         </p>
+        <p className="text-sm text-zinc-500">Supported files: {supportedTypes}</p>
       </header>
 
       <ul className="grid gap-4 sm:grid-cols-3">

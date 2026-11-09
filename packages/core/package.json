@@ -1,0 +1,16 @@
+{
+  "name": "@chatwithdocs/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared RAG code for ChatWithDocs: text extraction, chunking, embeddings and database access.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}
