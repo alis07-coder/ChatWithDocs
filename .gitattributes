@@ -1,0 +1,14 @@
+# Store text files with LF line endings in the repo and on checkout,
+# so files look the same on Windows, macOS and Linux.
+* text=auto eol=lf
+
+# Binary files: never change line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.woff binary
+*.woff2 binary
