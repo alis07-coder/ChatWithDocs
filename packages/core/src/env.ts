@@ -3,6 +3,7 @@
 // Variables are split into groups, one per external service. Each group is
 // checked only when a feature asks for it, so you can run the app before you
 // have keys for later phases (for example, upload works without Anthropic).
+// Usage: const { DATABASE_URL } = getEnv("database");
 
 import { z } from "zod";
 
@@ -13,23 +14,23 @@ const emptyToUndefined = (value: unknown) =>
 const required = () =>
   z.preprocess(emptyToUndefined, z.string({ error: "is required" }).trim());
 
-const requiredUrl = () =>
+const postgresUrl = () =>
   z.preprocess(
     emptyToUndefined,
     z
       .string({ error: "is required" })
       .trim()
-      .pipe(z.url({ error: "must be a full URL, e.g. https://..." })),
+      .regex(/^postgres(ql)?:\/\//, {
+        error: "must be a Postgres connection string, e.g. postgresql://...",
+      }),
   );
 
 const withDefault = (defaultValue: string) =>
   z.preprocess(emptyToUndefined, z.string().trim().default(defaultValue));
 
 const schemas = {
-  supabase: z.object({
-    SUPABASE_URL: requiredUrl(),
-    SUPABASE_SERVICE_ROLE_KEY: required(),
-    SUPABASE_STORAGE_BUCKET: withDefault("documents"),
+  database: z.object({
+    DATABASE_URL: postgresUrl(),
   }),
   voyage: z.object({
     VOYAGE_API_KEY: required(),
@@ -61,7 +62,7 @@ export type EnvGroup = keyof typeof schemas;
 type EnvFor<G extends EnvGroup> = z.infer<(typeof schemas)[G]>;
 
 const groupLabels: Record<EnvGroup, string> = {
-  supabase: "Supabase",
+  database: "Database (Neon)",
   voyage: "Voyage AI",
   anthropic: "Anthropic",
   mcp: "MCP server",

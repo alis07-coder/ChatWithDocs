@@ -7,14 +7,14 @@ search them, and chat with them through a Claude-powered bot that looks things u
 
 ## Features (planned)
 
-- **Upload:** add documents to a knowledge base. Each one is split into chunks, embedded and stored in Supabase (Postgres + pgvector).
+- **Upload:** add documents to a knowledge base. Each one is split into chunks, embedded and stored in Neon (Postgres + pgvector).
 - **Search:** find the passages most relevant to a question, with similarity scores.
 - **MCP server:** exposes `search_knowledge_base` and `list_documents` tools to any MCP client, including Claude Desktop and Claude Code.
 - **Chatbot:** Claude answers questions about a knowledge base by calling the MCP search tool, and shows its sources.
 
 ## Stack
 
-Next.js · TypeScript · Supabase (Postgres + pgvector) · Voyage AI embeddings · Claude · MCP TypeScript SDK
+Next.js · TypeScript · Neon (Postgres + pgvector) · Voyage AI embeddings · Claude · MCP TypeScript SDK
 
 ## Status
 
