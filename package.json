@@ -12,7 +12,9 @@
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "db:migrate": "npm run db:migrate --workspace @chatwithdocs/core --"
+    "db:generate": "npm run db:generate --workspace @chatwithdocs/core --",
+    "db:migrate": "npm run db:migrate --workspace @chatwithdocs/core --",
+    "db:studio": "npm run db:studio --workspace @chatwithdocs/core --"
   },
   "engines": {
     "node": ">=20"

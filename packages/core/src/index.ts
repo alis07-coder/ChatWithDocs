@@ -3,3 +3,4 @@
 
 export * from "./documents";
 export * from "./env";
+export * from "./db";
