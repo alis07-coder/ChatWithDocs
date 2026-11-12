@@ -16,6 +16,13 @@ search them, and chat with them through a Claude-powered bot that looks things u
 
 Next.js · TypeScript · Neon (Postgres + pgvector) · Voyage AI embeddings · Claude · MCP TypeScript SDK
 
+## Setup
+
+1. Install dependencies: `npm install`
+2. Copy `.env.example` to `.env` at the repository root.
+3. Set up the database: [docs/neon-setup.md](docs/neon-setup.md)
+4. Start the web app: `npm run dev --workspace @chatwithdocs/web`, then open http://localhost:3000
+
 ## Status
 
 Work in progress. Features are being added step by step.
