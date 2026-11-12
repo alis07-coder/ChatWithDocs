@@ -2,3 +2,4 @@
 // The web app and the MCP server import everything from here.
 
 export * from "./documents";
+export * from "./env";
