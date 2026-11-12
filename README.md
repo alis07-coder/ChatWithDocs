@@ -21,7 +21,8 @@ Next.js · TypeScript · Neon (Postgres + pgvector) · Voyage AI embeddings · C
 1. Install dependencies: `npm install`
 2. Copy `.env.example` to `.env` at the repository root.
 3. Set up the database: [docs/neon-setup.md](docs/neon-setup.md)
-4. Start the web app: `npm run dev --workspace @chatwithdocs/web`, then open http://localhost:3000
+4. Create the tables: `npm run db:migrate`
+5. Start the web app: `npm run dev --workspace @chatwithdocs/web`, then open http://localhost:3000
 
 ## Status
 

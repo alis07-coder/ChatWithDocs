@@ -8,13 +8,16 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "tsx scripts/migrate.ts"
   },
   "devDependencies": {
     "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "zod": "^4.6.7"
   }
 }
